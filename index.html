@@ -36,14 +36,6 @@ a{
 }	
 </style>
 <script src="./bubbling.js" ><!-- async --></script>
-<script> 
-  var myCanvas = document.getElementById('yourCanvasId');
-  if (typeof(mOver) != 'undefined' && typeof(drawBrush) != 'undefined') {
-    myCanvas.onmousedown = () => {mOver = true;};
-    myCanvas.onmouseup = () => {mOver = false;};
-    myCanvas.onmousemove = (event) => {drawBrush(event);}; 
-  }
-</script>
 </head>
 <body onload='init()'>
 
