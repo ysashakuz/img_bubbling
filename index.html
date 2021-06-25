@@ -1,0 +1,56 @@
+<html>
+<head>
+<style>
+body{ 
+  margin:0px;
+  background-color:#777;
+}
+#a{
+  position:absolute;
+  color:#fff;
+  right:71px;
+  margin-left:100%;}
+a{
+  position:inherit;
+}
+.circle {
+	border-radius: 50%;
+	/*background: url("../Pictures/test.jpg") repeat;*/
+	background-position: 0px 0px;
+}
+#i{
+  position:absolute;
+  top:0;
+  left:0;
+}
+.desc{
+	background-repeat: no-repeat;
+	width: 100%;
+	height:100%;
+	background-position: 0px 0px;
+	position:absolute;	
+}
+.c{
+	background-color:#178;
+	/*<body onmousedown='putFP(event)' onmouseup='putSP(event)' >*/
+}	
+</style>
+<script src="http://pastebin.com/raw/venXAcnP" ><!-- async --></script>
+<script> 
+  var myCanvas = document.getElementById('yourCanvasId');
+  if (typeof(mOver) != 'undefined' && typeof(drawBrush) != 'undefined') {
+    myCanvas.onmousedown = () => {mOver = true;};
+    myCanvas.onmouseup = () => {mOver = false;};
+    myCanvas.onmousemove = (event) => {drawBrush(event);}; 
+  }
+</script>
+</head>
+<body onload='init()'>
+
+<div  id='d0' ><img src='' class='c' id='i'></img><canvas id="yourCanvasID" class='desc' /></div>
+	<div class='c' id='d'>
+		
+	</div>
+</div><div id='xycoordinates'></div>
+</body>
+</html>
