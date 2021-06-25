@@ -16,7 +16,7 @@ var grd0=[];
 
 function init()
 {
-	cnvs=document.getElementById('yourCanvasID');
+	cnvs = document.getElementById('yourCanvasID');
 	var url=getCookie('url');
 	var rad=getCookie('rad');
 
@@ -26,9 +26,9 @@ function init()
 	d0.style.width=Iw;
 	d0.style.height=Ih;
 	cnvs.style.position='absolute';
-	cnvs.style.top=0;cnvs.style.left=0;cnvs.width=Iw;cnvs.height=Ih; cnvs.style.width=Iw;cnvs.style.height=Ih;
+	cnvs.style.top=0; cnvs.style.left=0; cnvs.width=Iw; cnvs.height=Ih; cnvs.style.width=Iw; cnvs.style.height=Ih;
 	cnvs.style.zIndex=2;
-	ctx=cnvs.getContext('2d');ctx.fillStyle = "#000000";
+	ctx=cnvs.getContext('2d'); ctx.fillStyle = "#000000";
 	var xy=document.getElementById('xycoordinates').innerHTML+="<div id='a'><a href='#' id='bblBtn' onclick='start()'> Bubbling </a><input type='number' name='bblR' id='bblR' onchange='bblR=value;' style='width:60px; margin-left:75px' value='17'><br> | <a href='#' id='drwBtn' onclick='drawMode=1'> Draw_Mode </a><br> | <a href='#' id='clrBtn' onclick='drawMode=0'> Clear_Mode</a><br> | <a href='#' id='resetBbl' onclick='resetBubbling()'> Reset_Bubbling </a><br><a href='#' id='newImg' onclick='newImage()'>New_Image</a><br><input type='text' name='imgURL' id=imgURL value='Paste image URL'><br><textarea onclick='value=JSON.stringify(circls);'>Get JSON circles</textarea></div>";
 /*	var da=document.createElement('div');
 	da.id='a';
@@ -46,6 +46,12 @@ function init()
 	var a=document.getElementById('clrBtn'); a.style.top=Ih+5;
 	var a=document.getElementById('resetBbl'); a.style.top=Ih+5;*/
 	grd=Grid();
+
+  	if (typeof(mOver) != 'undefined' && typeof(drawBrush) != 'undefined') {
+    		cnvs.onmousedown = () => {mOver = true;};
+		cnvs.onmouseup = () => {mOver = false;};
+		cnvs.onmousemove = (event) => {drawBrush(event);}; 
+  	}
 }
 
 function newImage()
