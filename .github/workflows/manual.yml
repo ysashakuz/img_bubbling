@@ -25,16 +25,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
-    - name: rename image1
-      run: git mv изображение_2021-07-02_220956.png ./img/lenna_orig.png
-    - name: rename image2
-      run: git mv изображение_2021-07-02_221256.png ./img/lenna_mask.png
-    - name: rename image3
-      run: git mv изображение_2021-07-02_221348.png ./img/lenna_processed.png
-    - name: comit
-      run: git checkout -b auto_branch && git commit -am 'Rename images'
-    - name: push
-      run: git push origin auto_branch
+    - uses: actions/checkout@v2
+    - name: git-bash
+      uses: pkg-src/github-action-git-bash@v1.1
+    - name: do git
+      run: |
+        git mv изображение_2021-07-02_220956.png ./img/lenna_orig.png
+        git mv изображение_2021-07-02_221256.png ./img/lenna_mask.png
+        git mv изображение_2021-07-02_221348.png ./img/lenna_processed.png
+        git checkout -b auto_branch 
+        git commit -am 'Rename images'
+        git push origin auto_branch
