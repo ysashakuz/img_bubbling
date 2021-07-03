@@ -4,4 +4,4 @@
 #### Example
 Original | Mask | Processed
 ---------|------|----------
-![Lenna original](/изображение_2021-07-02_220956.png) | ![Lenna mask](/изображение_2021-07-02_221256.png) | ![Lenna_processed](/изображение_2021-07-02_221348.png)
+![Lenna original](/img/lenna_orig.png) | ![Lenna mask](/img/lenna_mask.png) | ![Lenna_processed](/img/lenna_processed.png)
